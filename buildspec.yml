@@ -3,17 +3,19 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: corretto17 # Sets up the environment
+      java: corretto17
   pre_build:
     commands:
-      - echo Logging in or running pre-checks...
+      - echo "Navigating to project directory..."
+      - cd templatemo_630_helix_drift
   build:
     commands:
-      - echo Building the project...
-      - mvn clean package # Runs your actual build/test commands
+      - echo "Building Maven package..."
+      - mvn clean package
   post_build:
     commands:
-      - echo Build completed on `date`
+      - echo "Build completed on `date`"
 artifacts:
+  base-directory: 'templatemo_630_helix_drift'
   files:
-    - target/*.jar # Specifies what to pass to CodePipeline / S3
+    - 'target/*.jar'
