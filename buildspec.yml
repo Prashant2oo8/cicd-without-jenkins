@@ -6,15 +6,10 @@ phases:
       java: corretto17
   pre_build:
     commands:
-      - echo "Navigating to project directory..."
       - cd templatemo_630_helix_drift
   build:
     commands:
-      - echo "Building Maven package..."
       - mvn clean package
-  post_build:
-    commands:
-      - echo "Build completed on `date`"
 artifacts:
   base-directory: 'templatemo_630_helix_drift'
   files:
