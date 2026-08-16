@@ -5,5 +5,6 @@ phases:
     commands:
       - echo "Packaging static website files..."
 artifacts:
+  base-directory: 'templatemo_630_helix_drift'
   files:
     - '**/*'
