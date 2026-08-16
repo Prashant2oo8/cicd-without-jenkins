@@ -1,16 +1,9 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      java: corretto17
-  pre_build:
-    commands:
-      - cd templatemo_630_helix_drift
   build:
     commands:
-      - mvn clean package
+      - echo "Packaging static website files..."
 artifacts:
-  base-directory: 'templatemo_630_helix_drift'
   files:
-    - 'target/*.jar'
+    - '**/*'
