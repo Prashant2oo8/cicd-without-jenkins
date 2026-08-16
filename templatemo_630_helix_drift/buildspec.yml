@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto17 # Sets up the environment
+  pre_build:
+    commands:
+      - echo Logging in or running pre-checks...
+  build:
+    commands:
+      - echo Building the project...
+      - mvn clean package # Runs your actual build/test commands
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - target/*.jar # Specifies what to pass to CodePipeline / S3
